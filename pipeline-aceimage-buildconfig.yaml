@@ -9,7 +9,7 @@ spec:
   output: 
     to: 
       kind: ImageStreamTag
-      name: "pipeline-aceimage"
+      name: "pipeline-aceimage:latest-amd64"
       namespace: ace
   source: 
     dockerfile: |
