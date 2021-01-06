@@ -1,0 +1,26 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata: 
+  labels: 
+    name: pipeline-aceimage-buildconfig
+  name: pipeline-aceimage-buildconfig
+  namespace: ace
+spec: 
+  output: 
+    to: 
+      kind: ImageStreamTag
+      name: "pipeline-aceimage:latest-amd64"
+      namespace: ace
+  source: 
+    dockerfile: |
+        FROM ace-server-prod-10-base:latest-amd64
+        COPY SimpleHTTPAppTest.bar /home/aceuser/initial-config/bars/SimpleHTTPAppTest.bar
+    type: dockerfile
+  strategy: 
+    dockerStrategy: 
+      from: 
+        kind: ImageStreamTag
+        name: "pipeline-aceimage:latest-amd64"
+        namespace: ace
+    type: Docker
+  triggers: []
