@@ -8,8 +8,8 @@ metadata:
 spec: 
   output: 
     to: 
-      kind: ImageStreamTag
-      name: "pipeline-aceimage:latest"
+      kind: ImageStream
+      name: "pipeline-aceimage"
       namespace: ace
   source: 
     dockerfile: |
@@ -19,8 +19,8 @@ spec:
   strategy: 
     dockerStrategy: 
       from: 
-        kind: ImageStreamTag
-        name: "pipeline-aceimage:latest"
+        kind: ImageStream
+        name: "pipeline-aceimage"
         namespace: ace
     type: Docker
   triggers: []
