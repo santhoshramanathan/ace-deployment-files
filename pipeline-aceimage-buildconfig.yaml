@@ -20,7 +20,7 @@ spec:
     dockerStrategy: 
       from: 
         kind: ImageStreamTag
-        name: "ace-server-prod-10-base:latest"
+        name: "ace-server-prod-10-base:latest-amd64"
         namespace: ace
     type: Docker
   triggers: []
