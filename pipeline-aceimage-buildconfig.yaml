@@ -9,7 +9,7 @@ spec:
   output: 
     to: 
       kind: ImageStreamTag
-      name: "ace-server-prod-10-base:latest"
+      name: "pipeline-aceimage:latest"
       namespace: ace
   source: 
     dockerfile: |
@@ -20,7 +20,7 @@ spec:
     dockerStrategy: 
       from: 
         kind: ImageStreamTag
-        name: "pipeline-aceimage:latest"
+        name: "ace-server-prod-10-base:latest"
         namespace: ace
     type: Docker
   triggers: []
