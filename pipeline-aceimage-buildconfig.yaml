@@ -13,14 +13,14 @@ spec:
       namespace: ace
   source: 
     dockerfile: |
-        FROM ace-server-prod:latest-amd64
+        FROM ace-prod-10-r1:latest-amd64
         COPY SimpleHTTPAppTest.bar /home/aceuser/initial-config/bars/SimpleHTTPAppTest.bar
     type: dockerfile
   strategy: 
     dockerStrategy: 
       from: 
         kind: ImageStreamTag
-        name: "ace-server-prod:latest-amd64"
+        name: "ace-prod-10-r1:latest-amd64"
         namespace: ace
     type: Docker
   triggers: []
